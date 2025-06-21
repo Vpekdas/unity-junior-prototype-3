@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerX : MonoBehaviour
 {
@@ -37,6 +38,10 @@ public class PlayerControllerX : MonoBehaviour
             float adjustedY = _yBound - transform.position.y;
             Vector3 newPos = new(transform.position.x, transform.position.y + adjustedY, transform.position.z);
             transform.position = newPos;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
     }
 

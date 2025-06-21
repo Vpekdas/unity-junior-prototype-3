@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class PlayerController : MonoBehaviour
             DirtParticle.Stop();
             _playerAudio.PlayOneShot(JumpSound, 1.0f);
             IsOnGround = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
     }
 
